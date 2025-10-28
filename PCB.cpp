@@ -2,7 +2,7 @@
 #include <cstdint>
 using namespace std;
 
-#define STACK_SIZE 4096 // Define stack size for each process = 4 kb
+#define STACK_SIZE 1024 // Define stack size for each process = 1 kb
 
 // States of Process
 enum class ProcessState
@@ -73,6 +73,7 @@ struct PCB
     }
 };
 
+// Acts as a Scheduler Simulation
 int main()
 {
     // Create a PCB for a process with ID 101

@@ -2,7 +2,7 @@
 #include <cstdint>
 using namespace std;
 
-#define STACK_SIZE 1024 // Define stack size for each process = 1 kb
+#define STACK_SIZE 4096 // Define stack size for each process = 4 kb
 
 // States of Process
 enum class ProcessState
@@ -76,13 +76,14 @@ struct PCB
 int main()
 {
     // Create a PCB for a process with ID 101
-    PCB process1(101);
+    PCB process1(1);
     // Display initial state of the process
     process1.print();
     process1.state = ProcessState::READY;
+    process1.print();
 
     // Simulate state change
-    PCB process2(102);
+    PCB process2(2);
     process2.state = ProcessState::READY;
     cout << "\nDispatching Process " << process2.processID << ":\n";
     process2.state = ProcessState::RUNNING;
